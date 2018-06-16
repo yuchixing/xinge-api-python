@@ -4,10 +4,17 @@
 Copyright ? 1998 - 2013 Tencent. All Rights Reserved. 腾讯公司 版权所有
 
 """
+import sys
+if sys.VERSION > 3:
+    PY3 = True
+    import httplib
+    import urllib
+else:
+    PY3 = False
+    import http.client as httplib
+    import urllib.parse as urllib
 
 import json
-import httplib
-import urllib
 import hashlib
 import time
 
